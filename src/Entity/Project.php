@@ -51,4 +51,9 @@ final class Project extends AbstractEntity
      * @var string
      */
     public $scmUrl;
+    
+    /**
+     * @var string
+     */
+    public $scmBranch;
 }
