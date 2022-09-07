@@ -51,4 +51,9 @@ final class JobTemplate extends AbstractEntity
      * @var string
      */
     public $job_type;
+
+    /**
+     * @var string
+     */
+    public $project;
 }
