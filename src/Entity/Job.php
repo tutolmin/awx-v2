@@ -56,4 +56,9 @@ final class Job extends AbstractEntity
      * @var bool
      */
     public $failed;
+    
+    /**
+     * @var string
+     */
+    public $limit;    
 }
