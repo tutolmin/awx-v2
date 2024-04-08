@@ -24,7 +24,7 @@ class User extends AbstractApi
      * @param int $per_page
      * @param int $page
      *
-     * @return DomainEntity[]
+     * @return UserEntity[]
      */
     public function getAll($per_page = 200, $page = 1)
     {
@@ -38,19 +38,19 @@ class User extends AbstractApi
     }
 
     /**
-     * @param string $domainName
+     * @param string $userName
      *
      * @throws HttpException
      *
-     * @return DomainEntity
+     * @return UserEntity
      */
-    public function getByName($domainName)
+    public function getByName($userName)
     {
-        $domain = $this->adapter->get(sprintf('%s/domains/%s', $this->endpoint, $domainName));
+        $user = $this->adapter->get(sprintf('%s/users/%s', $this->endpoint, $userName));
 
-        $domain = json_decode($domain);
+        $user = json_decode($user);
 
-        return new DomainEntity($domain->domain);
+        return new UserEntity($user);
     }
 
     /**
@@ -59,26 +59,26 @@ class User extends AbstractApi
      *
      * @throws HttpException
      *
-     * @return DomainEntity
+     * @return UserEntity
      */
     public function create($name, $ipAddress)
     {
         $content = ['name' => $name, 'ip_address' => $ipAddress];
 
-        $domain = $this->adapter->post(sprintf('%s/domains', $this->endpoint), $content);
+        $user = $this->adapter->post(sprintf('%s/users', $this->endpoint), $content);
 
-        $domain = json_decode($domain);
+        $user = json_decode($user);
 
-        return new DomainEntity($domain->domain);
+        return new UserEntity($user);
     }
 
     /**
-     * @param string $domain
+     * @param string $user
      *
      * @throws HttpException
      */
-    public function delete($domain)
+    public function delete($user)
     {
-        $this->adapter->delete(sprintf('%s/domains/%s', $this->endpoint, $domain));
+        $this->adapter->delete(sprintf('%s/users/%s', $this->endpoint, $user));
     }
 }

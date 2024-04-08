@@ -73,10 +73,12 @@ abstract class AbstractEntity
      *
      * @return string|null DateTime in ISO8601 format
      */
-    protected static function convertDateTime($date)
-    {
+    protected static function convertDateTime($date) {
         if (!$date) {
-            return;
+            $date = new \DateTime("");
+            $date->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+
+            return $date->format(\DateTime::ISO8601);
         }
 
         $date = new \DateTime($date);

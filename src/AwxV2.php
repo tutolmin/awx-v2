@@ -22,6 +22,8 @@ use AwxV2\Api\Ping;
 use AwxV2\Api\Project;
 use AwxV2\Api\Setting;
 use AwxV2\Api\User;
+use AwxV2\Api\Inventory;
+use AwxV2\Api\InventorySource;
 
 /**
  * @author Antoine Corcy <contact@sbin.dk>
@@ -73,7 +75,7 @@ class AwxV2
     }
     
     /**
-     * @return Job
+     * @return JobTemplate
      */
     public function jobTemplate()
     {
@@ -89,7 +91,7 @@ class AwxV2
     }
     
     /**
-     * @return organizatio
+     * @return organization
      */
     public function organization()
     {
@@ -110,6 +112,22 @@ class AwxV2
     public function project()
     {
         return new Project($this->adapter, $this->url);
+    }
+
+    /**
+     * @return inventorySource
+     */
+    public function inventorySource()
+    {
+        return new InventorySource($this->adapter, $this->url);
+    }
+    
+    /**
+     * @return inventory
+     */
+    public function inventory()
+    {
+        return new Inventory($this->adapter, $this->url);
     }
     
     /**

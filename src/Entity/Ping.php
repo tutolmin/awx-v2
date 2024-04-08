@@ -22,7 +22,7 @@ final class Ping extends AbstractEntity
     public $ha;
 
     /**
-     * @var version
+     * @var string
      */
     public $version;
 

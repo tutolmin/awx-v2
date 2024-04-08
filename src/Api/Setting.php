@@ -38,7 +38,7 @@ class Setting extends AbstractApi
     }
 
     /**
-     * @param int $id
+     * @param int $name
      *
      * @throws HttpException
      *

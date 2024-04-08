@@ -19,14 +19,15 @@
     },
 
     "require": {
-        "php": "^8.1.7",
+        "php": "^7.2",
         "ext-json": "*"
     },
 
     "require-dev": {
         "kriswallsmith/buzz": "^0.16",
         "guzzlehttp/guzzle": "^5.3|^6.3|^7",
-        "phpspec/phpspec": "^2.5"
+        "phpspec/phpspec": "^2.5",
+        "phpstan/phpstan": "^1.10"
     },
 
     "suggest": {

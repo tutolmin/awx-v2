@@ -40,7 +40,7 @@ final class User extends AbstractEntity
     /**
      * @var string
      */
-    public $username;
+    public $userName;
     
     /**
      * @var string

@@ -24,7 +24,7 @@ class Job extends AbstractApi
      * @param int $per_page
      * @param int $page
      *
-     * @return DomainEntity[]
+     * @return JobEntity[]
      */
     public function getAll($per_page = 200, $page = 1)
     {
@@ -59,7 +59,7 @@ class Job extends AbstractApi
      *
      * @throws HttpException
      *
-     * @return DomainEntity
+     * @return JobEntity
      */
     public function create($name, $ipAddress)
     {
@@ -73,7 +73,7 @@ class Job extends AbstractApi
     }
 
     /**
-     * @param string $domain
+     * @param string $var
      *
      * @throws HttpException
      */

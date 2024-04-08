@@ -73,7 +73,7 @@ class Credential extends AbstractApi
     }
 
     /**
-     * @param string $credential
+     * @param string $var
      *
      * @throws HttpException
      */

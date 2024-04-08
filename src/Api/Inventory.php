@@ -11,43 +11,43 @@
 
 namespace AwxV2\Api;
 
-use AwxV2\Entity\Organization as OrganizationEntity;
+use AwxV2\Entity\Inventory as InventoryEntity;
 use AwxV2\Exception\HttpException;
 
 /**
  *
  *
  */
-class Organization extends AbstractApi
+class Inventory extends AbstractApi
 {
     /**
      * @param int $per_page
      * @param int $page
      *
-     * @return OrganizationEntity[]
+     * @return InventoryEntity[]
      */
     public function getAll($per_page = 200, $page = 1)
     {
-        $vars = $this->adapter->get(sprintf('%s/organizations/?page_size=%d&page=%d', $this->endpoint, $per_page, $page));
+        $vars = $this->adapter->get(sprintf('%s/inventories/?page_size=%d&page=%d', $this->endpoint, $per_page, $page));
 
         $vars = json_decode($vars);
 
         return array_map(function ($var) {
-            return new OrganizationEntity($var);
+            return new InventoryEntity($var);
         }, $vars->results);
     }
     
     /**
      * @param int $id
      *
-     * @return OrganizationEntity
+     * @return InventoryEntity
      */
     public function getById($id)
     {
-        $var = $this->adapter->get(sprintf('%s/organizations/%d/', $this->endpoint, $id));
+        $var = $this->adapter->get(sprintf('%s/inventories/%d/', $this->endpoint, $id));
 
         $var = json_decode($var);
 
-        return new OrganizationEntity($var);
+        return new InventoryEntity($var);
     }
 }

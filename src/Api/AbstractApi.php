@@ -31,7 +31,7 @@ abstract class AbstractApi
 
     /**
      * @param AdapterInterface $adapter
-     * @param string|null      $endpoint
+     * @param string|null      $baseEndpoint
      */
     public function __construct(AdapterInterface $adapter, $baseEndpoint)
     {
